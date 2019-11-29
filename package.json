@@ -1,0 +1,17 @@
+{
+    "name": "gitversion-local",
+    "version": "1.0.0",
+    "description": "Runs GitVersion and exposes the versioining attributes as output",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": ["gitversion", "github", "actions"],
+    "author": "nuno.caneco@gmail.com",
+    "license": "MIT",
+    "dependencies": {
+      "@actions/core": "^1.1.0",
+      "@actions/github": "^1.1.0"
+    }
+  }
+  

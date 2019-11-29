@@ -1,0 +1,60 @@
+name: 'GitVersion action'
+description: 'Runs GitVersion and exposes versioning attributes as output'
+inputs:
+  path-to-gitversion: 
+    description: 'Path to the gitversion executable'
+    required: true
+outputs:
+  major:
+    description: ''
+  minor:
+    description: ''
+  patch:
+    description: ''
+  preReleaseTag:
+    description: ''
+  preReleaseTagWithDash:
+    description: ''
+  preReleaseLabel:
+    description: ''
+  preReleaseNumber:
+    description: ''
+  weightedPreReleaseNumber:
+    description: ''
+  buildMetaData:
+    description: ''
+  buildMetaDataPadded:
+    description: ''
+  fullBuildMetaData:
+    description: ''
+  majorMinorPatch:
+    description: ''
+  semVer:
+    description: ''
+  legacySemVer:
+    description: ''
+  legacySemVerPadded:
+    description: ''
+  assemblySemVer:
+    description: ''
+  assemblySemFileVer:
+    description: ''
+  fullSemVer:
+    description: ''
+  informationalVersion:
+    description: ''
+  branchName:
+    description: ''
+  sha:
+    description: ''
+  shortSha:
+    description: ''
+  nuGetVersionV2:
+    description: ''
+  nuGetVersion:
+    description: ''
+  nuGetPreReleaseTagV2:
+    description: ''
+runs:
+  using: 'node12'
+  main: 'index.js'
