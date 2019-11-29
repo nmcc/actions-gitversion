@@ -1,5 +1,8 @@
 name: 'GitVersion action'
 description: 'Runs GitVersion and exposes versioning attributes as output'
+branding:
+  icon: tag
+  color: orange
 inputs:
   path-to-gitversion: 
     description: 'Path to the gitversion executable'
