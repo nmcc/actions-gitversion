@@ -5,9 +5,16 @@ const { execFileSync } = require('child_process');
 try {
     var gitVersionExec = core.getInput('path-to-gitversion');
     console.log('Executing gitversion json  %s', gitVersionExec);
-  
-    var json = JSON.parse(execFileSync(gitVersionExec, ['/output', 'json']));
-  
+
+    var gitversionOutput = execFileSync(gitVersionExec, ['/output', 'json']);
+
+    try {
+        var json = JSON.parse();
+    } catch (error) {
+        console.error("Error parsing JSON %s\n%s", error.message, gitversionOutput);
+        throw error;
+    }
+
     core.setOutput('Major', json.Major);
     core.setOutput('Minor', json.Minor);
     core.setOutput('Patch', json.Patch);
@@ -34,6 +41,6 @@ try {
     core.setOutput('NuGetVersion', json.NuGetVersion);
     core.setOutput('NuGetPreReleaseTagV2', json.NuGetPreReleaseTagV2);
 
-} catch(error) {
+} catch (error) {
     core.setFailed(error.message);
 }
