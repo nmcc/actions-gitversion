@@ -53,6 +53,6 @@ steps:
   - name: Create Release
     uses: actions/create-release@v1
     with:
-        tag_name: ${{ steps.git_version.outputs.FullSemVer }}
+        tag_name: ${{ steps.gitversion.outputs.SemVer }}
   
 ```
