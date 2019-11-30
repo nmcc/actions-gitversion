@@ -7,11 +7,12 @@ try {
     console.log('Executing gitversion json  %s', gitVersionExec);
 
     var gitversionOutput = execFileSync(gitVersionExec, ['/output', 'json']);
-
+    console.log("Gitversion:\n%s", gitversionOutput);
+    
     try {
-        var json = JSON.parse();
+        var json = JSON.parse(gitversionOutput);
     } catch (error) {
-        console.error("Error parsing JSON %s\n%s", error.message, gitversionOutput);
+        console.error("Error parsing JSON %s", error.message);
         throw error;
     }
 
