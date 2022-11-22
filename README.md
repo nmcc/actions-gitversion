@@ -46,7 +46,7 @@ The output is aligned with [GitVersion output variables](https://gitversion.read
 steps:
   - name: GitVersion
     id: gitversion
-    uses: nmcc/actions/gitversion@v1
+    uses: nmcc/actions-gitversion@v1
     with:
       path-to-gitversion: packages/GitVersion.CommandLine/tools/GitVersion.exe
   

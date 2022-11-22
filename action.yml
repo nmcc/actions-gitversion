@@ -7,6 +7,9 @@ inputs:
   path-to-gitversion: 
     description: 'Path to the gitversion executable'
     required: true
+  args:
+    description: 'Command line arguments to pass to gitversion'
+    required: false
 outputs:
   major:
     description: ''

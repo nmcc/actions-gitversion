@@ -6,7 +6,15 @@ try {
     var gitVersionExec = core.getInput('path-to-gitversion');
     console.log('Executing gitversion json  %s', gitVersionExec);
 
-    var gitversionOutput = execFileSync(gitVersionExec, ['/output', 'json']);
+    var gitVersionArgs = ['/output', 'json'];
+
+    var inputArgs = core.getInput('args');
+
+    if(inputArgs && inputArgs.length > 0) {
+        gitVersionArgs.concat(inputArgs);
+    }
+
+    var gitversionOutput = execFileSync(gitVersionExec, gitVersionArgs);
     console.log("Gitversion:\n%s", gitversionOutput);
     
     try {
